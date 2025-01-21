@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - AI Health Hub</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7dd3fc;
+            --accent: #f472b6;
+            --background: #ffffff;
+            --text: #1f2937;
+            --gray-light: #f3f4f6;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: var(--gray-light);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Filter Section */
+        .filters {
+            padding: 2rem 0;
+            background: var(--gray-light);
+            margin-bottom: 2rem;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border: 2px solid var(--primary);
+            border-radius: 2rem;
+            background: none;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Individual Product Page */
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 4rem 0;
+        }
+
+        .product-gallery {
+            position: sticky;
+            top: 2rem;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .features-list {
+            list-style: none;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1rem;
+            background: var(--gray-light);
+            border-radius: 0.5rem;
+        }
+
+        .review-section {
+            margin-top: 4rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .review-card {
+            background: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .rating {
+            color: gold;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-gallery {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Products Overview Page -->
+    <div class="container">
+        <section class="filters">
+            <h2>Filter Products</h2>
+            <div class="filter-options">
+                <button class="filter-button active">All</button>
+                <button class="filter-button">Fitness</button>
+                <button class="filter-button">Mental Health</button>
+                <button class="filter-button">Sleep</button>
+                <button class="filter-button">Nutrition</button>
+            </div>
+        </section>
+
+        <div class="products-grid">
+            <article class="product-card">
+                <img src="/api/placeholder/400/320" alt="AI Smartwatch" class="product-image">
+                <div class="product-content">
+                    <h3 class="product-title">AI Smartwatch Pro</h3>
+                    <div class="product-price">$299.99</div>
+                    <p class="product-description">Advanced health tracking with AI-powered insights and personalized coaching.</p>
+                    <a href="/products/ai-smartwatch" class="cta-button">Learn More</a>
+                </div>
+            </article>
+            <!-- More product cards... -->
+        </div>
+    </div>
+
+    <!-- Individual Product Page -->
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <img src="/api/placeholder/600/400" alt="AI Smartwatch Pro" class="product-image">
+                <!-- Additional images or gallery here -->
+            </div>
+            
+            <div class="product-info">
+                <h1 class="product-title">AI Smartwatch Pro</h1>
+                <div class="product-price">$299.99</div>
+                <p class="product-description">
+                    Experience the next generation of health tracking with our AI-powered smartwatch. 
+                    Get personalized insights, real-time health monitoring, and AI-driven coaching to optimize your wellness journey.
+                </p>
+                
+                <h2>Key Features</h2>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <span class="feature-icon">🤖</span>
+                        <div>
+                            <h3>AI Health Coach</h3>
+                            <p>Personalized recommendations based on your health data and goals</p>
+                        </div>
+                    </li>
+                    <li class="feature-item">
+                        <span class="feature-icon">❤️</span>
+                        <div>
+                            <h3>Advanced Heart Monitoring</h3>
+                            <p>24/7 heart rate tracking with AI-powered anomaly detection</p>
+                        </div>
+                    </li>
+                    <!-- More features... -->
+                </ul>
+                
+                <div class="review-section">
+                    <h2>User Reviews</h2>
+                    <div class="reviews-grid">
+                        <div class="review-card">
+                            <div class="rating">★★★★★</div>
+                            <p>"Amazing AI features that actually help improve my fitness routine!"</p>
+                            <footer>- John D.</footer>
+                        </div>
+                        <!-- More reviews... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
