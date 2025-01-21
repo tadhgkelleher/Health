@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the latest in AI-powered health and wellness tools, tips, and reviews to elevate your fitness, mental well-being, and overall lifestyle.">
+    <title>AI Health Hub | Explore AI-Powered Wellness</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7dd3fc;
+            --accent: #f472b6;
+            --background: #ffffff;
+            --text: #1f2937;
+            --gray-light: #f3f4f6;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+        }
+
+        .main-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        /* Navigation */
+        .main-nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            padding: 1.5rem 0;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(37,99,235,0.1), rgba(37,99,235,0.05));
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Articles Section */
+        .article-list {
+            list-style: none;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .article-list li {
+            background: var(--gray-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .article-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-list a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        /* Products Section */
+        .product-list {
+            list-style: none;
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .product-list li {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-list img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--gray-light);
+        }
+
+        .product-list h3 {
+            padding: 1.5rem 1.5rem 0.5rem;
+        }
+
+        .product-list p {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+        }
+
+        .product-list a {
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        /* Footer */
+        .main-footer {
+            background: var(--text);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-nav ul {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 data-aos="fade-down">AI Health Hub</h1>
+            <p data-aos="fade-up">Your Gateway to AI-Powered Wellness and Lifestyle Solutions</p>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <h2 data-aos="fade-up">Revolutionize Your Health with AI</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Discover how artificial intelligence is transforming fitness, mental health, and overall well-being. Explore our curated tools, tips, and reviews designed to help you thrive.</p>
+            <a href="#products" class="cta-button" data-aos="fade-up" data-aos-delay="200">Explore Products</a>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 data-aos="fade-up">About Us</h2>
+            <p data-aos="fade-up" data-aos-delay="100">At AI Health Hub, we are dedicated to bringing you the latest advancements in AI-driven health and wellness. From smart fitness devices to AI-guided meditation apps, we provide insights and reviews to help you make informed decisions.</p>
+        </div>
+    </section>
+    <section id="articles" class="articles-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Latest Articles</h2>
+            <ul class="article-list">
+                <li data-aos="fade-up" data-aos-delay="100">
+                    <a href="#">Top 5 AI Fitness Apps to Try in 2025</a>
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                    <a href="#">How AI Can Help You Sleep Better</a>
+                </li>
+                <li data-aos="fade-up" data-aos-delay="300">
+                    <a href="#">AI vs. Traditional Health Trackers: Which Is Better?</a>
+                </li>
+                <li data-aos="fade-up" data-aos-delay="400">
+                    <a href="#">Mindfulness Meets Technology: AI Meditation Tools</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Featured Products</h2>
+            <ul class="product-list">
+                <li data-aos="fade-up" data-aos-delay="100">
+                    <a href="#">
+                        <img src="/api/placeholder/400/320" alt="Smartwatch">
+                        <h3>AI-Driven Smartwatch</h3>
+                        <p>Track your health metrics like never before with cutting-edge AI.</p>
+                    </a>
+                </li>
+                <li data-aos="fade-up" data-aos-delay="200">
+                    <a href="#">
+                        <img src="/api/placeholder/400/320" alt="Meditation App">
+                        <h3>AI Meditation App</h3>
+                        <p>Achieve mindfulness with personalized AI-guided sessions.</p>
+                    </a>
+                </li>
+                <li data-aos="fade-up" data-aos-delay="300">
+                    <a href="#">
+                        <img src="/api/placeholder/400/320" alt="Fitness Tracker">
+                        <h3>Smart Fitness Tracker</h3>
+                        <p>Revolutionize your workouts with AI-powered insights.</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 AI Health Hub. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
